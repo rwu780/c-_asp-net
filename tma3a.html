@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>COMP466 Assignment3 TMA3</title>
+    <link rel="stylesheet" type="text/css" href="/shared/share.css" />
+</head>
+<body>
+    <header class="header">TMA3</header>
+    <nav class="sideMenu">
+        <ul>
+            <li><a href="tma3a.html">Main</a></li>
+            <li><a href="part1/main.aspx">Part1</a></li>
+            <li><a href="part2/main.aspx">Part2</a></li>
+            <li><a href="part3/main_p3.aspx">Part3</a></li>
+            <li><a href="part4/main_p4.aspx">Part4</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <div>
+            <h1>General Information</h1>
+            <p>
+                Course: COMP466
+                <br />
+                Assignment Number: Assignment3
+                <br />
+                Name and ID: Rui Wu, 3336937
+                <br />
+                Date Begin: Jan 15, 2018
+                <br />
+                Estimated Hours: 
+                <br />
+                Running Web Application at:<a href="http://assignment3comp466.azurewebsites.net/tma3a.html">TMA3a.html</a>
+                <br />
+                Guide for user: This application was deveoped with ASP.NET in C# and hosted on azure server.
+                <br />
+                Run locally, import the project into Microsoft Visual Studio.
+            </p>
+        </div>
+        <div>
+            <div>
+                <h2>Part1</h2>
+                <h3>Original Description and requirements of the project:</h3>
+                <p>
+                    The original description and requirements of part1 is to design a web application that uses a persistent cookie to track how many
+                    times a client computer has visited the page.<br />
+                    And at the mean time, the web should also show the time zone of where the client located and its IP address
+                </p>
+
+                <h3>Interpretation, Analysis and Design</h3>
+                <div>
+                    <p>
+                        Require 3 label, one to display the cookie count, one for IP address and one for the timzone
+                    </p>
+                    <p>
+                        For the cookie: If the cookie do not exist, create a cookie and add to response; If the cookie exists, load the count from cookie
+                        and add one, then delete old cookie and create a new cookie and store the value and add to response
+                    </p>
+
+                    <p>
+                        For the IP address: retrieve a list of IP address associated with the current lost and find the IP that used for inter network
+                    </p>
+
+                    <p>
+                        For the timezone: use TimeZoneInfo class and load the ID for local time zone.
+                    </p>
+                </div>
+                <h3>Documentation:</h3>
+                <p>main.aspx: main file for part1.</p>
+
+            </div>
+
+            <div>
+                <h2>Part2</h2>
+
+                <h3>Original Description and requirements of the project:</h3>
+                <p>
+                    The requirement for part2 is to develope a web application using ASP.NET in C# that runs a slideshow of a list of pictures.
+                    <ul>
+                        <li>
+                            Information about the pic must be stored either in a database or in a text file. The information should contain
+                            the name, locatoin of each picture
+                        </li>
+                        <li>
+                            The caption should be shown under each picture
+                        </li>
+                        <li>
+                            A button to start/stop the show
+                        </li>
+                        <li>
+                            Control to toggle the show between random and sequential
+                        </li>
+                        <li>
+                            buttons manually turn the show backward or forward
+                        </li>
+                        <li>
+                            At least 20 pictures
+                        </li>
+                    </ul>
+                </p>
+
+                <h3>Interpretation, Analysis and Design</h3>
+                <div>
+                    <p>
+                        Require 1 image to display the image, 1 label to display the caption, 1 script manager, 1 timer, 4 fieldsets:
+                        <ul>
+                            <li>The first fieldset contain a button that will control the start/stop action</li>
+                            <li>The second fieldset contains control forward/backward movement for the show</li>
+                            <li>The third fieldset contain control toggle for random/sequential movement for the show</li>
+                            <li>The last fieldset contain two button, manually for next/previous image</li>
+                        </ul>
+
+                    </p>
+
+                    <p>
+                        The name, location and caption for the iamges will be stored inside picArray.txt. The program will read the file, and retrieve the url, caption based on index of the current image.
+                    </p>
+
+                    <p>
+                        Since the web page reload after button click or image refresh, thus need to use ViewState to store values that need to be retained during postback
+                        There will be 4 fields need to stop inside ViewSate:
+                        <ul>
+                            <li>current: current index of the image</li>
+                            <li>startStop: current state for start/stop </li>
+                            <li>movement: current state for forward/backward</li>
+                            <li>sequence: current state for random/sequential</li>
+                        </ul>
+
+                        Every time a toggle or button was clicked, it will update the value inside ViewSate.
+                        Thus the next image will change correspond to the 4 values inside ViewState
+                    </p>
+                </div>
+                <h3>Documentation:</h3>
+                <p>mai.aspx: main page for part2, contain the slideshow</p>
+                <p>picArray.txt: contain the caption and the source of different pics</p>
+                <p>pic folder: contiin all the picture used for the application</p>
+
+            </div>
+
+            <div>
+                <h2>Part3</h2>
+
+                <h3>Original Description and requirements of the project:</h3>
+                <p>
+                    The requirment for part3 is to develop an online computer store in which customers can select a computer from
+                    a list and customize it by replacing some components in its standard configuration with other that may be better
+                    or cheaper. Customer can then place an order with the online store.
+                    <ul>
+                        <li>
+                            There should be a list of computers, lists of different parts or componets(no less than five different components including at least RAM, hard drive
+                            , CPU, display, OS, and soundcard) of computers that can be reviewed by customers.
+                        </li>
+                        <li>
+                            A customer can select a computer with default/standard configuration and pricing, and then customize it by changing
+                            its configuration
+                        </li>
+                        <li>
+                            Whenever a change has been made by the customer, the price total needs to be dynamically changed and displayed to
+                            the customer
+                        </li>
+                        <li>
+                            After the customer has hit the buy, a summary of selections, including all details of the customized computer and its pricing
+                            , should be displayed in the browser window.
+                        </li>
+                        <li>
+                            At this stage, you don't need to save orders placed by customers in the database.
+                        </li>
+                    </ul>
+                </p>
+
+                <h3>Interpretation, Analysis and Design</h3>
+                <div>
+                    <p>
+                        Require three aspx page for this part
+                        <ul>
+                            <li>The first page contain a welcome page to the user</li>
+                            <li>The second page contain is the order page</li>
+                            <li>The third page contain a contact/feedback form</li>
+                        </ul>
+
+                        <br />
+                        The first page will contain all the links to the other pages, it will contain greeting to users and a brief description of the application
+                        <br />
+                        <br />
+                        The second page contain all the computer and component information. Since all value in part3 is hard code. When the user submitting the order, it just added up all the value and
+                        display the final price
+                        <br />
+                        <br />
+                        The third page contain a feedback form. It will contain name, email, phone number, subject and comment field. All field will be validate by the validator before submit. After submit, it should have
+                        a confirm message for the user.
+                    </p>
+
+                    <p>
+                        <b>Findings:</b> from online stores,
+                        <ol>
+                            <li>User able to explore product without signing in</li>
+                            <li>User only need to sign in only when he/she placed the order or want to view his own order</li>
+                            <li>Price dynamically update when user add/delete an item</li>
+                            <li>User able to see the reference number of his/her order</li>
+                            <li>Items were listed under their own departments and their own categories, thus user can navigate the page and find what they want</li>
+                        </ol>
+
+                        <b>Apply to own app</b>
+                        <ol>
+                            <li>User should able to view the product without sign in</li>
+                            <li>User able to sign in to view his/her orders</li>
+                            <li>If the user did not sign when he/she place an order, the program will ask the user to sign in or register</li>
+                            <li>User able to see the reference number of his/her order</li>
+                        </ol>
+                    </p>
+                </div>
+                <h3>Documentation:</h3>
+                <p>main_p3.aspx: main page for part3, contain brief description of the application</p>
+                <p>contactUs_p3.aspx: contain contact information and feedback form</p>
+                <p>Order_p3.aspx: contain the price for different computer and different components</p>
+            </div>
+
+            <div>
+                <h2>Part4</h2>
+
+                <h3>Original Description and requirements of the project:</h3>
+                <p>
+                    Continue the work completed in part3, to develop a fully functioning online computer store.
+                    <ol>
+                        <li>Add a customer management module to the online computer store, which should include new customer registration, customer authentication, and password recovery</li>
+                        <li>Add an order management module which will save orders for registered customers and allow registered customers to manage their orders, including view the list and details of each item in theh list and delete or make changes to a selected order in the lsit</li>
+                        <li>
+                            Design and implement a back-end database to support the online computer store that will
+                            <ul>
+                                <li>store all the details of the computers and components</li>
+                                <li>Use the database for all customer management</li>
+                                <li>Use the database for all order management</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </p>
+
+                <p>Copy the component from part3</p>
+
+                <h3>Interpretation, Analysis and Design</h3>
+                <div>
+                    <p>
+                        Require additional page for: sign in, viewOrder and signoug.aspx
+                        <ul>
+                            <li>The sign in page will let user to sign, register and/or recover password</li>
+                            <li>The second page will retrieve the user order from database and display in a table format</li>
+                            <li>The third page, dummy page, just to clear the user information, and redirect to main_p4.aspx</li>
+                        </ul>
+
+                        The main page will be the same as part3
+                        <br />
+                        <br />
+                        The contactUs page will also remain the same
+                        <br />
+                        <br />
+
+                        Order page: computer and component information will be retrieve from database rather than hard-coded.
+                        <br />
+                        <br />
+                        The sign In page will contain three sections: Sign in, register and recover password session. Only one section will  be display. If the user already sign in and click the sign in page, it will direct the user to viewOrder.aspx
+                        
+                        <br />
+                        <br />
+                        The viewOrder page will retrieve the computer details, price and reference number in a tabular form.
+                        <br />
+                        <br />
+                        Signout page will clear the session information and direct user to the main page.
+                    </p>
+
+                </div>
+                <h3>Documentation:</h3>
+                <p>main_p4.aspx: main page for part4, contain brief description of the application</p>
+                <p>contactUs_p4.aspx: contain contact information and feedback form</p>
+                <p>Order_p4.aspx: contain the price for different computer and different components</p>
+                <p>signIn.aspx: allow user to sign in, register and recover password</p>
+                <p>signout.aspx: clear the session</p>
+                <p>viewOrders.aspx: retrieve user's order from database and display in a table form</p>
+            </div>
+
+            <div>
+                <h2>Additional Information</h2>
+                <ul>
+                    <li>Initially the database was host locally, but when Azure server enforce a sql server connection. Thus actual database was host on assignment3comp466.database.windows.net</li>
+                    <li>Credential to log in will be store inside Web.config conn string</li>
+                </ul>
+            </div>
+            <div>
+                <h2>Reference</h2>
+                <ul>
+                    <li>https://msdn.microsoft.com/en-us/</li>
+                    <li>https://stackoverflow.com/questions/6639468/c-forms-does-not-exist-in-the-namespace-system-windows</li>
+                    <li>https://stackoverflow.com/questions/6983821/radiobuttonlist-onselectedindexchanged</li>
+                    <li>https://stackoverflow.com/questions/2706500/how-do-i-generate-a-random-int-number-in-c</li>
+                    <li>https://www.codeproject.com/articles/830795/how-to-add-a-checkbox-column-to-gridview-in-asp-ne</li>
+                    <li>http://www.c-sharpcorner.com/uploadfile/3d39b4/simple-select-insert-update-and-delete-using-linq-to-sql/</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">COMP466 Assignment3</div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Database1" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Database1ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.userInfos" Member="userInfos">
+    <Type Name="userInfo">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.orderTable" Member="orderTables">
+    <Type Name="orderTable">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="computer" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ram" Type="System.String" DbType="Char(100) NOT NULL" CanBeNull="false" />
+      <Column Name="hd" Type="System.String" DbType="Char(100) NOT NULL" CanBeNull="false" />
+      <Column Name="cpu" Type="System.String" DbType="Char(100) NOT NULL" CanBeNull="false" />
+      <Column Name="display" Type="System.String" DbType="Char(100) NOT NULL" CanBeNull="false" />
+      <Column Name="os" Type="System.String" DbType="Char(100) NOT NULL" CanBeNull="false" />
+      <Column Name="soundcard" Type="System.String" DbType="Char(100) NOT NULL" CanBeNull="false" />
+      <Column Name="totalPrice" Type="System.String" DbType="Char(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
