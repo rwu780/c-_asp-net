@@ -30,12 +30,11 @@
                 <p>PLease select a computer to begin</p>
                 <p>&nbsp;</p>
                 <p>
-                    <asp:DropDownList ID="computerDrowDownList_p4" runat="server" AutoPostBack="true" EnableViewState="true" OnSelectedIndexChanged ="updateComputer">
-                        <asp:ListItem Value="350">HP Desktop($350)</asp:ListItem>
+                    <asp:DropDownList ID="computerDrowDownList_p4" runat="server" AutoPostBack="True" OnSelectedIndexChanged ="updateComputer" DataSourceID="computerSqlDataSource" DataTextField="name" DataValueField="price">
                         <asp:ListItem Value="300" Selected="True">HP Laptop($300)</asp:ListItem>
-                        <asp:ListItem Value="354">Dell Desktop($354)</asp:ListItem>
-                        <asp:ListItem Value="600">Dell Gaming PC($600)</asp:ListItem>
+
                     </asp:DropDownList>
+                    <asp:SqlDataSource ID="computerSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:computerConnectionString %>" SelectCommand="SELECT [name], [price] FROM [computerTable]"></asp:SqlDataSource>
                 </p>
                 <table style="width:100%;">
                     <tr>
@@ -94,29 +93,32 @@
                     <asp:Label ID="Label7_p4" runat="server" Text="Ram"></asp:Label>
                     <br />
                     <fieldset>
-                        <asp:RadioButtonList ID="ramRadioButtonList_p4" runat="server" AutoPostBack="true" OnSelectedIndexChanged ="updateRam">
+                        <asp:RadioButtonList ID="ramRadioButtonList_p4" runat="server" AutoPostBack="True" OnSelectedIndexChanged ="updateRam" DataSourceID="ramSqlDataSource" DataTextField="name" DataValueField="price">
                             <asp:ListItem Selected="True" Value="150">Kingston HyperX 8GB($150)</asp:ListItem>
-                            <asp:ListItem Value="250">Kingston HyperX 16GB($250)</asp:ListItem>
-                            <asp:ListItem Value="110">Axiom 4GB DDR4$(110)</asp:ListItem>
+                            <%--<asp:ListItem Value="250">Kingston HyperX 16GB($250)</asp:ListItem>
+                            <asp:ListItem Value="110">Axiom 4GB DDR4$(110)</asp:ListItem>--%>
                         </asp:RadioButtonList>
+                        <asp:SqlDataSource ID="ramSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:computerConnectionString %>" SelectCommand="SELECT [name], [price], [description] FROM [ramTable]"></asp:SqlDataSource>
                     </fieldset><br />
                     <br />
                     <asp:Label ID="Label8_p4" runat="server" Text="Hard Drive"></asp:Label>
     &nbsp;<fieldset>
-                        <asp:RadioButtonList ID="hdRadioButtonList_p4" runat="server" AutoPostBack="true" OnSelectedIndexChanged ="updateHD">
+                        <asp:RadioButtonList ID="hdRadioButtonList_p4" runat="server" AutoPostBack="True" OnSelectedIndexChanged ="updateHD" DataSourceID="hdDataSource" DataTextField="name" DataValueField="price">
                             <asp:ListItem Selected="True" Value="58">Seagate BarraCude 1TB($58)</asp:ListItem>
-                            <asp:ListItem Value="70">Seagate BarraCuda 2TB($70)</asp:ListItem>
-                            <asp:ListItem Value="80">Seagate BarraCuda 2TB Hybrid Drive$(80)</asp:ListItem>
+                            <%--<asp:ListItem Value="70">Seagate BarraCuda 2TB($70)</asp:ListItem>
+                            <asp:ListItem Value="80">Seagate BarraCuda 2TB Hybrid Drive$(80)</asp:ListItem>--%>
                         </asp:RadioButtonList>
+                        <asp:SqlDataSource ID="hdDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:computerConnectionString %>" SelectCommand="SELECT [name], [price] FROM [hdTable]"></asp:SqlDataSource>
                     </fieldset><br />
                     <br />
                     <asp:Label ID="Label9_p4" runat="server" Text="CPU"></asp:Label>
     &nbsp;<fieldset>
-                        <asp:RadioButtonList ID="cpuRadioButtonList_p4" runat="server" AutoPostBack="true" OnSelectedIndexChanged ="updateCPU">
+                        <asp:RadioButtonList ID="cpuRadioButtonList_p4" runat="server" AutoPostBack="True" OnSelectedIndexChanged ="updateCPU" DataSourceID="cpuSqlDataSource" DataTextField="name" DataValueField="price">
                             <asp:ListItem Value="383">Intel Core i5-7600K($383)</asp:ListItem>
-                            <asp:ListItem Selected="True" Value="80">Intel Pentium G4400 3.3Ghz($80)</asp:ListItem>
-                            <asp:ListItem Value="528">Intel Core i7-7700K($528)</asp:ListItem>
+                 <%--           <asp:ListItem Selected="True" Value="80">Intel Pentium G4400 3.3Ghz($80)</asp:ListItem>
+                            <asp:ListItem Value="528">Intel Core i7-7700K($528)</asp:ListItem>--%>
                         </asp:RadioButtonList>
+                        <asp:SqlDataSource ID="cpuSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:computerConnectionString %>" SelectCommand="SELECT [name], [price] FROM [cpuTable]"></asp:SqlDataSource>
                         <br />
                     </fieldset>
                     <br />
@@ -125,11 +127,12 @@
                     <asp:Label ID="Label10_p4" runat="server" Text="Display"></asp:Label>
 
                     <fieldset>
-                        <asp:RadioButtonList ID="displayRadioButtonList_p4" runat="server" AutoPostBack="true" OnSelectedIndexChanged ="updateDisplay">
+                        <asp:RadioButtonList ID="displayRadioButtonList_p4" runat="server" AutoPostBack="True" OnSelectedIndexChanged ="updateDisplay" DataSourceID="displaySqlDataSource" DataTextField="name" DataValueField="price">
                             <asp:ListItem Selected="True" Value="300">ASUS 31.5&quot; LED Display $(300)</asp:ListItem>
-                            <asp:ListItem Value="550">Philips 43&quot; 4K UHD LED Monitor($550)</asp:ListItem>
-                            <asp:ListItem Value="500">ASUS 28&quot; 4K Ultra HD LED Gaming Monitor($500)</asp:ListItem>
+                            <%--<asp:ListItem Value="550">Philips 43&quot; 4K UHD LED Monitor($550)</asp:ListItem>
+                            <asp:ListItem Value="500">ASUS 28&quot; 4K Ultra HD LED Gaming Monitor($500)</asp:ListItem>--%>
                         </asp:RadioButtonList>
+                        <asp:SqlDataSource ID="displaySqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:computerConnectionString %>" SelectCommand="SELECT [name], [price] FROM [displayTable]"></asp:SqlDataSource>
                         <br />
                         <br />
                     </fieldset>
@@ -139,11 +142,12 @@
                     <asp:Label ID="Label11_p4" runat="server" Text="Operating System"></asp:Label>
 
                     <fieldset>
-                        <asp:RadioButtonList ID="osRadioButtonList_p4" runat="server" AutoPostBack="true" OnSelectedIndexChanged ="updateOS">
+                        <asp:RadioButtonList ID="osRadioButtonList_p4" runat="server" AutoPostBack="True" OnSelectedIndexChanged ="updateOS" DataSourceID="osSqlDataSource" DataTextField="name" DataValueField="price">
                             <asp:ListItem Selected="True" Value="165">Microsoft Windows 10 Home($165)</asp:ListItem>
-                            <asp:ListItem Value="260">Microsoft Windows 10 Pro($260)</asp:ListItem>
-                            <asp:ListItem Value="100">Apple Mac OS X Tiger Version($100)</asp:ListItem>
+<%--                            <asp:ListItem Value="260">Microsoft Windows 10 Pro($260)</asp:ListItem>
+                            <asp:ListItem Value="100">Apple Mac OS X Tiger Version($100)</asp:ListItem>--%>
                         </asp:RadioButtonList>
+                        <asp:SqlDataSource ID="osSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:computerConnectionString %>" SelectCommand="SELECT * FROM [osTable]"></asp:SqlDataSource>
                         <br />
                     </fieldset>
                     <br />
@@ -151,11 +155,12 @@
                 
                     <asp:Label ID="Label1_p4" runat="server" Text="Operating System"></asp:Label>
                     <fieldset>
-                        <asp:RadioButtonList ID="soundcardRadioButtonList_p4" runat="server" AutoPostBack="true" OnSelectedIndexChanged ="updateSoundcard">
+                        <asp:RadioButtonList ID="soundcardRadioButtonList_p4" runat="server" AutoPostBack="True" OnSelectedIndexChanged ="updateSoundcard" DataSourceID="soundcardSqlDataSource" DataTextField="name" DataValueField="price">
                             <asp:ListItem Value="150">ASUS STRIX SOAR 7.1 PCle Gaming Sound Card($150)</asp:ListItem>
-                            <asp:ListItem Value="416">ASUS EsSENCESTXII Essence STIX II Sound Card($416)</asp:ListItem>
-                            <asp:ListItem Selected="True" Value="17">MMNOX Startech 4.1 Channel PCI External Sound Card($17)</asp:ListItem>
+                            <%--<asp:ListItem Value="416">ASUS EsSENCESTXII Essence STIX II Sound Card($416)</asp:ListItem>
+                            <asp:ListItem Selected="True" Value="17">MMNOX Startech 4.1 Channel PCI External Sound Card($17)</asp:ListItem>--%>
                         </asp:RadioButtonList>
+                        <asp:SqlDataSource ID="soundcardSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:computerConnectionString %>" SelectCommand="SELECT [name], [price] FROM [soundcardTable]"></asp:SqlDataSource>
                     </fieldset>
                     <br />
                     <br />

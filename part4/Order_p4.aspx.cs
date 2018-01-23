@@ -12,8 +12,18 @@ namespace Assignment3.part4
         protected void Page_Load(object sender, EventArgs e)
         {
             //Retrieve info
-            initial();
-            totalPrice();
+            if (!Page.IsPostBack)
+            {
+                soundcardRadioButtonList_p4.SelectedIndex = 0;
+                ramRadioButtonList_p4.SelectedIndex = 0;
+                hdRadioButtonList_p4.SelectedIndex = 0;
+                cpuRadioButtonList_p4.SelectedIndex = 0;
+                displayRadioButtonList_p4.SelectedIndex = 0;
+                osRadioButtonList_p4.SelectedIndex = 0;
+                initial();
+                totalPrice();
+            }
+
         }
 
         protected void order(object sender, EventArgs e)
@@ -85,6 +95,9 @@ namespace Assignment3.part4
 
         protected void initial()
         {
+
+
+
             computerLabel_p4.Text = computerDrowDownList_p4.SelectedItem.Text;
             ramLabel_p4.Text = ramRadioButtonList_p4.SelectedItem.Text;
             hdLabel_p4.Text = hdRadioButtonList_p4.SelectedItem.Text;

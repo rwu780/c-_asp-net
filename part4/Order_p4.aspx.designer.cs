@@ -31,6 +31,15 @@ namespace Assignment3.part4 {
         protected global::System.Web.UI.WebControls.DropDownList computerDrowDownList_p4;
         
         /// <summary>
+        /// computerSqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource computerSqlDataSource;
+        
+        /// <summary>
         /// computerLabel_p4 control.
         /// </summary>
         /// <remarks>
@@ -130,6 +139,15 @@ namespace Assignment3.part4 {
         protected global::System.Web.UI.WebControls.RadioButtonList ramRadioButtonList_p4;
         
         /// <summary>
+        /// ramSqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource ramSqlDataSource;
+        
+        /// <summary>
         /// Label8_p4 control.
         /// </summary>
         /// <remarks>
@@ -146,6 +164,15 @@ namespace Assignment3.part4 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList hdRadioButtonList_p4;
+        
+        /// <summary>
+        /// hdDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource hdDataSource;
         
         /// <summary>
         /// Label9_p4 control.
@@ -166,6 +193,15 @@ namespace Assignment3.part4 {
         protected global::System.Web.UI.WebControls.RadioButtonList cpuRadioButtonList_p4;
         
         /// <summary>
+        /// cpuSqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource cpuSqlDataSource;
+        
+        /// <summary>
         /// Label10_p4 control.
         /// </summary>
         /// <remarks>
@@ -182,6 +218,15 @@ namespace Assignment3.part4 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList displayRadioButtonList_p4;
+        
+        /// <summary>
+        /// displaySqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource displaySqlDataSource;
         
         /// <summary>
         /// Label11_p4 control.
@@ -202,6 +247,15 @@ namespace Assignment3.part4 {
         protected global::System.Web.UI.WebControls.RadioButtonList osRadioButtonList_p4;
         
         /// <summary>
+        /// osSqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource osSqlDataSource;
+        
+        /// <summary>
         /// Label1_p4 control.
         /// </summary>
         /// <remarks>
@@ -218,6 +272,15 @@ namespace Assignment3.part4 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList soundcardRadioButtonList_p4;
+        
+        /// <summary>
+        /// soundcardSqlDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource soundcardSqlDataSource;
         
         /// <summary>
         /// submitButton_p4 control.
